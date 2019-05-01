@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Document</title>
+</head>
+
+<body class="container">
+    <h1 class="title">表單</h1>
+    <form class="myStyle">
+        <div>姓名:
+            <input type="text" name="userName" id="userName" onchange="WriteData()">
+        </div>
+        <div>性別:
+            <input type="radio" name="gender" id="gender" value="Male" onclick="WriteMalea()">男性
+            <input type="radio" name="gender" id="gender" value="Female" onclick="WriteFemale()">女性
+        </div>
+        <div>年齡:
+            <input type="text" name="age" id="age" onchange="WriteData()" onkeyup="value=value.replace(/[^\d]/g,'') " onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))">
+        </div>
+        <div>輸入密碼:
+            <input TYPE="password" name="password" id="password" onchange="CheckPassword()">
+        </div>
+        <div>重新輸入密碼:
+            <input type="password" name="re-password" id="re-password" onchange="CheckPassword()">
+        </div>
+        <div>班級:
+            <select id="mySelect" onchange="WriteData()">
+                    <option value="null">請選擇</option>
+                    <option value="資工1A">資工1A</option>
+                    <option value="資工1B">資工1B</option>
+                    <option value="資工2A">資工2A</option>
+                    <option value="資工2B">資工2B</option>
+                    <option value="資工3A">資工3A</option>
+                    <option value="資工3B">資工3B</option>
+                    <option value="資工4A">資工4A</option>
+                    <option value="資工4B">資工4B</option>
+            </select>
+        </div>
+    </form>
+    <div class="myStyle">
+        輸入結果:
+        <input type="text" name="result" id="result" size=50>
+    </div>
+    <div name="check" id="check"></div>
+    </div>
+
+    <script>
+        function WriteMalea() {
+            document.getElementById("gender").value = "Male";
+            WriteData();
+        }
+
+        function WriteFemale() {
+            document.getElementById("gender").value = "Female";
+            WriteData();
+        }
+
+        function WriteData() {
+            var name = document.getElementById("userName").value;
+            var sex = document.getElementById("gender").value;
+            var ages = document.getElementById("age").value;
+            var which_class = document.getElementById("mySelect").value;
+            document.getElementById("result").value = "姓名:" + name + " 性別:" + sex + " 年齡:" + ages + " 班級:" + which_class;
+        }
+
+        function CheckPassword() {
+            var password = document.getElementById("password").value;
+            var rePassword = document.getElementById("re-password").value;
+            if (password.length < 6) {
+                document.getElementById("check").innerHTML = "<div class='Unpass'>密碼過短</div>";
+            } else if (password != rePassword) {
+                document.getElementById("check").innerHTML = "<div class='Unpass'>密碼不相同</div>";
+            } else {
+
+                document.getElementById("check").innerHTML = "<div class='Pass'>OK</div>";
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+.title{
+    font-size: 50px;
+    text-align:center;
+    font-family: 'Pacifico', cursive;
+}
+
+.items{
+    color: rgb(13, 143, 1);
+    font-family: 'monospace', sans-serif;
+}
+
+.images{
+    align-self: center;
+}

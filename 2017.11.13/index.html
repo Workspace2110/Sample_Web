@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Document</title>
+</head>
+
+<script>
+    function pickapic() {
+
+        var picname = new Array();
+        random_pic = new Array();
+        picname[0] = "images/0.png";
+        picname[1] = "images/1.png";
+        picname[2] = "images/2.png";
+        picname[3] = "images/3.png";
+        picname[4] = "images/4.png";
+        picname[5] = "images/5.png";
+        picname[6] = "images/6.png";
+        picname[7] = "images/7.png";
+        picname[8] = "images/8.png";
+        picname[9] = "images/9.png";
+
+        var which = Math.floor(Math.random() * 10);
+        random_pic0.src = picname[which];
+        var which = Math.floor(Math.random() * 10);
+        random_pic1.src = picname[which];
+        var which = Math.floor(Math.random() * 10);
+        random_pic2.src = picname[which];
+        var which = Math.floor(Math.random() * 10);
+        random_pic3.src = picname[which];
+        // for(var i=0;i<4;++i){
+        //     var which = Math.floor(Math.random() * 10);
+        //     random_pic[i].src = picname[which];
+        // }
+    }
+</script>
+
+<body onload="pickapic()">
+    <img name="random_pic0" width="50px" height="60px">
+    <img name="random_pic1" width="50px" height="60px">
+    <img name="random_pic2" width="50px" height="60px">
+    <img name="random_pic3" width="50px" height="60px">
+</body>
+
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/script.js"></script>
+
+</html>
